@@ -1,0 +1,9 @@
+<%= params[:callback] %>([
+	<% @posts.each do |post| %>
+		{
+			title: <%= post.title.to_json %>,
+			url: "<%= url_for_post(post) %>",
+			date: "<%= post.created_at.strftime('%Y-%m-%d') %>"
+		},
+	<% end %>
+])

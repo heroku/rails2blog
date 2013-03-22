@@ -1,0 +1,13 @@
+<div class="item">
+	<div class="item_details">
+		<h3><%= link_to post.title, url_for_post(post) %></h3>
+		<h4>by <%= post.author.name %> - <%= post.created_at.relative_time %></h4>
+	</div>
+	<div class="item_content">
+		<%= post.content %>
+	</div>
+	<div class="item_meta">
+		<p><span class="item_comments"><a href="<%= url_for_post(post) %>#disqus_thread">View Comments</a></span></p>
+		<span class="item_tags">tagged: <%= post_tag_links(post)  %>
+	</div>
+</div>

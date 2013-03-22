@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title><%= @blog.name %> | <% if @html_title %><%= @html_title %><% else %>Blog<% end %></title>
+	<link type="text/css" rel="Stylesheet" media="screen" href="/themes/heroku/css/core.css" />
+	<link type="text/css" rel="Stylesheet" media="screen" href="/themes/heroku/css/blog.css?68286201" />
+
+	<link href="http://feeds2.feedburner.com/heroku" rel="alternate" title="Primary Feed" type="application/rss+xml" />
+</head>
+<body>
+<div id="bodywrap">
+	<% if flash[:notice] %>
+		<div class="notice"><%= flash[:notice] %></div>
+	<% end %>
+
+	<div id="box">
+		<%= render :partial => 'includes/header' %>
+		<%= render :partial => 'includes/sidebar' %>
+
+		<div id="blog_content">
+			<%= yield %>
+		</div>
+	</div>
+</div>
+
+<!-- disqus -->
+<script type="text/javascript">
+//<[CDATA[
+(function() {
+		links = document.getElementsByTagName('a');
+		query = '?';
+		for(var i = 0; i < links.length; i++) {
+			 if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				 query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+		}
+		document.write('<script type="text/javascript" src="http://disqus.com/forums/heroku/get_num_replies.js' + query + '"></' + 'script>');
+	}());
+//]]>
+</script>
+
+<!-- Start of HubSpot Logging Code  -->
+<script type="text/javascript" language="javascript">
+var hs_portalid=162276; 
+var hs_salog_version = "2.00";
+var hs_ppa = "heroku.app12.hubspot.com";
+document.write(unescape("%3Cscript src='" + document.location.protocol + "//" + hs_ppa + "/salog.js.aspx' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- End of HubSpot Logging Code -->
+
+<!-- Start of HubSpot Enterprise Logging Code -->
+<script type="text/javascript">
+(function() {
+ var p = document.createElement('script');
+ p.type = 'text/javascript'; p.async = true;
+ p.src = '//d2f7h8c8hc0u7y.cloudfront.net/performable/pax/4qH98S.js';
+ var s = document.getElementsByTagName('script')[0];
+ s.parentNode.insertBefore(p, s);
+})();
+</script>
+<!-- End of HubSpot Enterprise Logging Code -->
+
+</body>
+</html>
+

@@ -1,0 +1,24 @@
+Group-Blog is designed to be used as its name implies by a group (although it can be used by just one person) with each blog having its own subdomain.  For example you can have john.blog.example.com and tacos.blog.example.com where john and tacos are two separate blogs but are both managed by Group-Blog.
+
+Requirements:
+	Rails 2.1
+	gem install mislav-will_paginate --source http://gems.github.com/
+
+
+Rake Tasks:
+	*) rake blog:init
+		Create a default blog site. Uses the same environment variables as blog:create and blog:author:create
+
+	*) rake blog:create
+		Create a blog site by fetching its field values from the following environment variables:
+		
+		BLOG_DOMAIN
+		BLOG_NAME
+
+		Also uses environment variables from rake blog:author:create
+
+	*) rake blog:author:create
+		Create a new blog author by fetching its field values from BLOG_AUTHOR_NAME and BLOG_AUTHOR_EMAIL
+
+	*) rake blog:author:reset
+		Resets an author's password interactively.  Finds the author from BLOG_AUTHOR_EMAIL

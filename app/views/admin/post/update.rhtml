@@ -1,0 +1,44 @@
+<h2><% if @post.new_record? %>New Post<% else %>Edit Post<% end %></h2>
+
+<%= error_messages_for 'post' %>
+
+<% form_for @post, :url => { :action => :update }, :html => { :method => :post } do |f| %>
+	<% unless @post.new_record? %>
+		<%= hidden_field_tag :id, @post.id %>
+	<% end %>
+	<table class="form">
+	<tbody>
+		<tr>
+			<th>Title</th>
+			<td><%= f.text_field :title %></td>
+		</tr>
+		<tr>
+			<th>Content</th>
+			<td><%= f.text_area :content_raw %></td>
+		</tr>
+		<tr>
+			<th>Extended Content<br />(for additional info)</th>
+			<td><%= f.text_area :extended_content_raw %></td>
+		</tr>
+		<tr>
+			<th>URL Slug</th>
+			<td><%= f.text_field :slug %></td>
+		</tr>
+		<tr>
+			<th>Tags</th>
+			<td><%= text_field_tag 'tags', @post.tag_list.join(', ') %></td>
+		</tr>
+		<tr>
+			<th>Author</th>
+			<td><%= @post.author %></td>
+		</tr>
+	</tbody>
+
+	<tfoot>
+		<tr>
+			<td></td>
+			<td><%= submit_tag "Save" %></td>
+		</tr>
+	</tfoot>
+	</table>
+<% end %>

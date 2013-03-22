@@ -1,0 +1,1 @@
+BLOG_CONFIG = {'SECRET' => ENV['SECRET_TOKEN'] || "yo" * 5}

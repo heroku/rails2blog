@@ -1,0 +1,5 @@
+<% @posts.each do |post| %>
+	<%= render :partial => 'post', :locals => { :post => post } %>
+<% end %>
+
+<%= will_paginate @posts if @posts.respond_to?(:total_pages) %>

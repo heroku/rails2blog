@@ -1,0 +1,21 @@
+<div class="item">
+	<div class="item_details">
+		<h3><%= link_to post.title, url_for_post(post) %></h3>
+		<h4>by <%= post.author.name %> - <%= post.created_at.relative_time %></h4>
+	</div>
+	<div class="item_content">
+		<%= post.content %>
+		<%= post.extended_content %>
+	</div>
+	<div class="item_meta">
+		<p><span class="item_comments"><a href="<%= url_for_post(post) %>#disqus_thread">View Comments</a></span></p>
+		<span class="item_tags">tagged: <%= post_tag_links(post)  %>
+
+		<div class="item_hierarchy">
+			<%= link_to 'previous', url_for_post(post.prev_post) if post.prev_post %><% if post.next_post and post.prev_post %>,<% end %>
+			<%= link_to 'next', url_for_post(post.next_post) if post.next_post %>
+		</div>
+	</div>
+</div>
+
+<div id="disqus_thread"></div><script type="text/javascript" src="https://disqus.com/forums/heroku/embed.js"></script><noscript><a href="http://heroku.disqus.com/?url=ref">View the discussion thread.</a></noscript>

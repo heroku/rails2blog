@@ -1,0 +1,12 @@
+<% form_tag :action => 'login' do %>
+	<%= hidden_field_tag 'redirect_back_url', params[:redirect_back_url] %>
+	<fieldset>
+		<label>Username <input type="text" id="username" name="username" value="<%= params[:username] %>" size="16" /></label>
+		<label>Password <input type="password" name="password" size="10" /></label>
+		<%= submit_tag "Login" %>
+	</fieldset>
+<% end %>
+
+<script type="text/javascript">
+	$('username').focus()
+</script>
