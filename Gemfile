@@ -1,6 +1,6 @@
 source :gemcutter
 
-gem "rails", "~> 2.3.16"
+gem "rails", "~> 5.0.0"
 gem "RedCloth", "~> 4.2.7"
 gem "heroku-nav", "0.1.24"
 gem "thin", "1.2.7"
