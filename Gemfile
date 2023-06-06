@@ -1,7 +1,7 @@
 source :gemcutter
 
 gem "rails", "~> 2.3.16"
-gem "RedCloth", "~> 4.2.7"
+gem "RedCloth", "~> 4.3.2"
 gem "heroku-nav", "0.1.24"
 gem "thin", "1.2.7"
 gem "pg", "0.14.1"
