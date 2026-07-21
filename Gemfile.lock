@@ -1,7 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    RedCloth (4.2.9)
+    RedCloth (4.3.3)
     actionmailer (2.3.16)
       actionpack (= 2.3.16)
     actionpack (2.3.16)
@@ -43,7 +43,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  RedCloth (~> 4.2.7)
+  RedCloth (~> 4.3.3)
   heroku-nav (= 0.1.24)
   pg (= 0.14.1)
   rack-ssl-enforcer
@@ -51,3 +51,6 @@ DEPENDENCIES
   rdoc (~> 3.5.1)
   redcarpet (= 1.17.1)
   thin (= 1.2.7)
+
+BUNDLED WITH
+   2.1.4
